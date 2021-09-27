@@ -1,0 +1,113 @@
+// --------------------------------------------------
+// CUSTOM CSS FILE
+
+// Grid Calculator: http://gridcalculator.dk/
+// Isotope: https://isotope.metafizzy.co/
+// Placholder Images: https://source.unsplash.com/
+// Bootstrap snippets: https://startbootstrap.com/snippets
+// Bootstrap menu examples: https://bootstrap-menu.com/
+
+
+
+// --------------------------------------------------
+// OVERRIDE DEFAULT VARIABLES
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      'Ubuntu', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;   // system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+// Accordion
+
+// scss-docs-start accordion-variables
+$accordion-padding-y:                        1.25rem; // 1rem !default;
+$accordion-padding-x:                        1.25rem !default;
+$accordion-border-width:                     1px; // $border-width !default;
+$accordion-border-color:                     black; // rgba($black, .125) !default;
+$accordion-border-radius:                    0px; // $border-radius !default;
+// $accordion-inner-border-radius:           subtract($accordion-border-radius, $accordion-border-width) !default;
+
+// accordion-body-padding-y:                $accordion-padding-y !default;
+// $accordion-body-padding-x:                $accordion-padding-x !default;
+
+// $accordion-button-padding-y:              $accordion-padding-y !default;
+// $accordion-button-padding-x:              $accordion-padding-x !default;
+// $accordion-button-color:                  $accordion-color !default;
+// $accordion-button-bg:                     $accordion-bg !default;
+// $accordion-transition:                    $btn-transition, border-radius .15s ease !default;
+$accordion-button-active-bg:                 white; // tint-color($component-active-bg, 90%) !default;
+$accordion-button-active-color:              black; // shade-color($primary, 10%) !default;
+
+$accordion-button-focus-border-color:     black; // $input-focus-border-color !default;
+$accordion-button-focus-box-shadow:       none; // $btn-focus-box-shadow !default;
+
+// $accordion-icon-width:                    1.25rem !default;
+// $accordion-icon-color:                    $accordion-button-color !default;
+// $accordion-icon-active-color:             $accordion-button-active-color !default;
+// $accordion-icon-transition:               transform .2s ease-in-out !default;
+// $accordion-icon-transform:                rotate(-180deg) !default;
+
+
+
+// --------------------------------------------------
+// BOOTSTRAP DEFAULT CSS IMPORT
+@import "../bootstrap/scss/bootstrap";
+
+
+
+// --------------------------------------------------
+/*! ADDITIONAL CUSTOM CODE */
+
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0px;
+  }
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+$colorVariants: (
+   primary: #00a1e5,
+   secondary: #5f00e5,
+   tertiary: #c94dac,
+);
+
+@each $colorName, $colorValue in $colorVariants {
+   @for $i from 1 through 100 {
+      @if $i % 5 == 0 {
+         $percentage: $i*1%;
+        
+         .bg-#{$colorName}.bg-darken-#{$i} {
+            background-color: mix(black, $colorValue, $percentage)!important;
+         }
+
+         .bg-#{$colorName}.bg-lighten-#{$i} {
+            background-color: mix(white, $colorValue, $percentage)!important;
+         }
+      }
+   }
+}
+
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background: linear-gradient(45deg, rgba(9,9,121,0.39119397759103647) 0%, rgba(0,212,255,0.6909138655462185) 100%);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.masthead::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(255, 125, 0, 0.5),rgba(0, 125, 255, 0.5));
+}
