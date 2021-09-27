@@ -1,20 +1,5 @@
 # Entwicklungs-Setup für RuMeDe-Webprojekte
 
-## Erstellen des Starterkits (Default-Setting)
-
-### Vorgehen
-1. Eingabeaufforderung öffen
-1. Zum Stammverzeichnis des Paketes navigieren mit `cd pfad/zum/paket`
-1. Erstellen der package.json-Datei durch Ausführen des Befehls `npm init --yes`
-1. Hizufügen der Abhängigkeiten
-    1. "dependencies" hinzufügen mit dem Befehl `npm install <package-name> --save-prod`
-    1. "devDependencies" hinzufügen mit dem Befehl `npm install <package-name> --save-dev`
-1. package.json-Datei öffnen und die Standardwerte wie gewünscht anpassen
-    1. "Description hinzufügen": `Gewünschte Beschreibung eingeben`
-    1. "Main" ändern in: `gulpfile.js`
-    1. "Autor" ändern in: `Reto Ulrich <info@rumede.ch>`
-    1. "License" ändern in: `MIT`
-
 <a name="localdev"></a>
 ## Lokale Entwicklung
 
