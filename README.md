@@ -5,7 +5,7 @@
 
 ### Verwendung
  - `$ npm install`
- - `$ sudo npm install gulp -g` (run `$ npm config set prefix /usr/local` if gulp isn't installed globally but in your `~`)
+ - `$ npm install gulp` (run `$ npm config set prefix /usr/local` if gulp isn't installed globally but in your `~`)
  - run `$ gulp serve`
  
 #### Inhalt
